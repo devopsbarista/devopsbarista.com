@@ -5,43 +5,67 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  geist:
+    specifier: ^1.2.1
+    version: 1.2.1(next@14.0.4)
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0
   react-dom:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
 
 devDependencies:
+  '@csstools/postcss-oklab-function':
+    specifier: ^3.0.9
+    version: 3.0.9(postcss@8.4.33)
   '@types/node':
-    specifier: ^20
+    specifier: ^20.11.5
     version: 20.11.5
   '@types/react':
-    specifier: ^18
+    specifier: ^18.2.48
     version: 18.2.48
   '@types/react-dom':
-    specifier: ^18
+    specifier: ^18.2.18
     version: 18.2.18
   autoprefixer:
-    specifier: ^10.0.1
-    version: 10.4.16(postcss@8.4.33)
+    specifier: ^10.4.17
+    version: 10.4.17(postcss@8.4.33)
   eslint:
-    specifier: ^8
+    specifier: ^8.56.0
     version: 8.56.0
   eslint-config-next:
     specifier: 14.0.4
     version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
   postcss:
-    specifier: ^8
+    specifier: ^8.4.33
     version: 8.4.33
+  prettier:
+    specifier: ^3.2.4
+    version: 3.2.4
+  prettier-plugin-organize-imports:
+    specifier: ^3.2.4
+    version: 3.2.4(prettier@3.2.4)(typescript@5.3.3)
+  prettier-plugin-tailwindcss:
+    specifier: ^0.5.11
+    version: 0.5.11(prettier-plugin-organize-imports@3.2.4)(prettier@3.2.4)
+  tailwind-merge:
+    specifier: ^2.2.0
+    version: 2.2.0
   tailwindcss:
-    specifier: ^3.3.0
+    specifier: ^3.4.1
     version: 3.4.1
+  tailwindcss-animate:
+    specifier: ^1.0.7
+    version: 1.0.7(tailwindcss@3.4.1)
+  tailwindcss-react-aria-components:
+    specifier: ^1.0.0
+    version: 1.0.0(tailwindcss@3.4.1)
   typescript:
-    specifier: ^5
+    specifier: ^5.3.3
     version: 5.3.3
 
 packages:
@@ -61,6 +85,72 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+    dev: true
+
+  /@csstools/color-helpers@4.0.0:
+    resolution: {integrity: sha512-wjyXB22/h2OvxAr3jldPB7R7kjTUEzopvjitS8jWtyd8fN6xJ8vy1HnHu0ZNfEkqpBJgQ76Q+sBDshWcMvTa/w==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: true
+
+  /@csstools/css-calc@1.1.6(@csstools/css-parser-algorithms@2.5.0)(@csstools/css-tokenizer@2.2.3):
+    resolution: {integrity: sha512-YHPAuFg5iA4qZGzMzvrQwzkvJpesXXyIUyaONflQrjtHB+BcFFbgltJkIkb31dMGO4SE9iZFA4HYpdk7+hnYew==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^2.5.0
+      '@csstools/css-tokenizer': ^2.2.3
+    dependencies:
+      '@csstools/css-parser-algorithms': 2.5.0(@csstools/css-tokenizer@2.2.3)
+      '@csstools/css-tokenizer': 2.2.3
+    dev: true
+
+  /@csstools/css-color-parser@1.5.1(@csstools/css-parser-algorithms@2.5.0)(@csstools/css-tokenizer@2.2.3):
+    resolution: {integrity: sha512-x+SajGB2paGrTjPOUorGi8iCztF008YMKXTn+XzGVDBEIVJ/W1121pPerpneJYGOe1m6zWLPLnzOPaznmQxKFw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^2.5.0
+      '@csstools/css-tokenizer': ^2.2.3
+    dependencies:
+      '@csstools/color-helpers': 4.0.0
+      '@csstools/css-calc': 1.1.6(@csstools/css-parser-algorithms@2.5.0)(@csstools/css-tokenizer@2.2.3)
+      '@csstools/css-parser-algorithms': 2.5.0(@csstools/css-tokenizer@2.2.3)
+      '@csstools/css-tokenizer': 2.2.3
+    dev: true
+
+  /@csstools/css-parser-algorithms@2.5.0(@csstools/css-tokenizer@2.2.3):
+    resolution: {integrity: sha512-abypo6m9re3clXA00eu5syw+oaPHbJTPapu9C4pzNsJ4hdZDzushT50Zhu+iIYXgEe1CxnRMn7ngsbV+MLrlpQ==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-tokenizer': ^2.2.3
+    dependencies:
+      '@csstools/css-tokenizer': 2.2.3
+    dev: true
+
+  /@csstools/css-tokenizer@2.2.3:
+    resolution: {integrity: sha512-pp//EvZ9dUmGuGtG1p+n17gTHEOqu9jO+FiCUjNN3BDmyhdA2Jq9QsVeR7K8/2QCK17HSsioPlTW9ZkzoWb3Lg==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: true
+
+  /@csstools/postcss-oklab-function@3.0.9(postcss@8.4.33):
+    resolution: {integrity: sha512-l639gpcBfL3ogJe+og1M5FixQn8iGX8+29V7VtTSCUB37VzpzOC05URfde7INIdiJT65DkHzgdJ64/QeYggU8A==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/css-color-parser': 1.5.1(@csstools/css-parser-algorithms@2.5.0)(@csstools/css-tokenizer@2.2.3)
+      '@csstools/css-parser-algorithms': 2.5.0(@csstools/css-tokenizer@2.2.3)
+      '@csstools/css-tokenizer': 2.2.3
+      '@csstools/postcss-progressive-custom-properties': 3.0.3(postcss@8.4.33)
+      postcss: 8.4.33
+    dev: true
+
+  /@csstools/postcss-progressive-custom-properties@3.0.3(postcss@8.4.33):
+    resolution: {integrity: sha512-WipTVh6JTMQfeIrzDV4wEPsV9NTzMK2jwXxyH6CGBktuWdivHnkioP/smp1x/0QDPQyx7NTS14RB+GV3zZZYEw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      postcss: 8.4.33
+      postcss-value-parser: 4.2.0
     dev: true
 
   /@eslint-community/eslint-utils@4.4.0(eslint@8.56.0):
@@ -549,15 +639,15 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
-  /autoprefixer@10.4.16(postcss@8.4.33):
-    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
+  /autoprefixer@10.4.17(postcss@8.4.33):
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001578
+      caniuse-lite: 1.0.30001579
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -615,8 +705,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001578
-      electron-to-chromium: 1.4.635
+      caniuse-lite: 1.0.30001579
+      electron-to-chromium: 1.4.637
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
     dev: true
@@ -646,8 +736,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001578:
-    resolution: {integrity: sha512-J/jkFgsQ3NEl4w2lCoM9ZPxrD+FoBNJ7uJUpGVjIg/j0OwJosWM36EPDv+Yyi0V4twBk9pPmlFS+PLykgEvUmg==}
+  /caniuse-lite@1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
 
   /chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -802,8 +892,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.635:
-    resolution: {integrity: sha512-iu/2D0zolKU3iDGXXxdOzNf72Jnokn+K1IN6Kk4iV6l1Tr2g/qy+mvmtfAiBwZe5S3aB5r92vp+zSZ69scYRrg==}
+  /electron-to-chromium@1.4.637:
+    resolution: {integrity: sha512-G7j3UCOukFtxVO1vWrPQUoDk3kL70mtvjc/DC/k2o7lE0wAdq+Vwp1ipagOow+BH0uVztFysLWbkM/RTIrbK3w==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -1306,6 +1396,14 @@ packages:
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
+
+  /geist@1.2.1(next@14.0.4):
+    resolution: {integrity: sha512-xCl7zWfnWqc+TbCG5qqyeT5tnVlOO4pSJsT3Ei59DN1SR4N2VlauF8Fv0D1pPFXGUJgu6RMoeZX+wsR4T9bMhg==}
+    peerDependencies:
+      next: ^13.2 || ^14
+    dependencies:
+      next: 14.0.4(react-dom@18.2.0)(react@18.2.0)
+    dev: false
 
   /get-intrinsic@1.2.2:
     resolution: {integrity: sha512-0gSo4ml/0j98Y3lngkFEot/zhiCeWsbYIlZ+uZOVgzLyLaUw7wxUL+nCTP0XJvJg1AXulJRI3UJi8GsbDuxdGA==}
@@ -1881,7 +1979,7 @@ packages:
       '@next/env': 14.0.4
       '@swc/helpers': 0.5.2
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001578
+      caniuse-lite: 1.0.30001579
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.2.0
@@ -2160,6 +2258,82 @@ packages:
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier-plugin-organize-imports@3.2.4(prettier@3.2.4)(typescript@5.3.3):
+    resolution: {integrity: sha512-6m8WBhIp0dfwu0SkgfOxJqh+HpdyfqSSLfKKRZSFbDuEQXDDndb8fTpRWkUrX/uBenkex3MgnVk0J3b3Y5byog==}
+    peerDependencies:
+      '@volar/vue-language-plugin-pug': ^1.0.4
+      '@volar/vue-typescript': ^1.0.4
+      prettier: '>=2.0'
+      typescript: '>=2.9'
+    peerDependenciesMeta:
+      '@volar/vue-language-plugin-pug':
+        optional: true
+      '@volar/vue-typescript':
+        optional: true
+    dependencies:
+      prettier: 3.2.4
+      typescript: 5.3.3
+    dev: true
+
+  /prettier-plugin-tailwindcss@0.5.11(prettier-plugin-organize-imports@3.2.4)(prettier@3.2.4):
+    resolution: {integrity: sha512-AvI/DNyMctyyxGOjyePgi/gqj5hJYClZ1avtQvLlqMT3uDZkRbi4HhGUpok3DRzv9z7Lti85Kdj3s3/1CeNI0w==}
+    engines: {node: '>=14.21.3'}
+    peerDependencies:
+      '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-pug': '*'
+      '@shopify/prettier-plugin-liquid': '*'
+      '@trivago/prettier-plugin-sort-imports': '*'
+      prettier: ^3.0
+      prettier-plugin-astro: '*'
+      prettier-plugin-css-order: '*'
+      prettier-plugin-import-sort: '*'
+      prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
+      prettier-plugin-organize-attributes: '*'
+      prettier-plugin-organize-imports: '*'
+      prettier-plugin-style-order: '*'
+      prettier-plugin-svelte: '*'
+      prettier-plugin-twig-melody: '*'
+    peerDependenciesMeta:
+      '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-pug':
+        optional: true
+      '@shopify/prettier-plugin-liquid':
+        optional: true
+      '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-css-order:
+        optional: true
+      prettier-plugin-import-sort:
+        optional: true
+      prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
+        optional: true
+      prettier-plugin-organize-attributes:
+        optional: true
+      prettier-plugin-organize-imports:
+        optional: true
+      prettier-plugin-style-order:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+      prettier-plugin-twig-melody:
+        optional: true
+    dependencies:
+      prettier: 3.2.4
+      prettier-plugin-organize-imports: 3.2.4(prettier@3.2.4)(typescript@5.3.3)
+    dev: true
+
+  /prettier@3.2.4:
+    resolution: {integrity: sha512-FWu1oLHKCrtpO1ypU6J0SbK2d9Ckwysq6bHj/uaCP26DxrPpppCLQRGVuqAxSTvhF00AcvDRyYrLNW7ocBhFFQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /prop-types@15.8.1:
@@ -2502,6 +2676,28 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /tailwind-merge@2.2.0:
+    resolution: {integrity: sha512-SqqhhaL0T06SW59+JVNfAqKdqLs0497esifRrZ7jOaefP3o64fdFNDMrAQWZFMxTLJPiHVjRLUywT8uFz1xNWQ==}
+    dependencies:
+      '@babel/runtime': 7.23.8
+    dev: true
+
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 3.4.1
+    dev: true
+
+  /tailwindcss-react-aria-components@1.0.0(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-iQNS6/037UPYTxj4G4IMFL7R3FT5I583/c/nQFdvYwU0gpuTZXCSeaWjCp9q0V9DqZypdo+j8KLRVaxD5z7psA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 3.4.1
     dev: true
 
   /tailwindcss@3.4.1:

@@ -2,26 +2,43 @@
   "name": "devopsbarista.com",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Yuriy Znatokov",
+    "url": "https://twitter.com/devopsbarista"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devopsbarista/devopsbarista.com"
+  },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "geist": "^1.2.1",
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "@csstools/postcss-oklab-function": "^3.0.9",
+    "@types/node": "^20.11.5",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-react-aria-components": "^1.0.0",
+    "typescript": "^5.3.3"
   }
 }
