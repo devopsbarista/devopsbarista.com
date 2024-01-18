@@ -1,5 +1,5 @@
-// import { withContentlayer } from 'next-contentlayer'
-// import { withPlausibleProxy } from 'next-plausible'
+const { withContentlayer } = require('next-contentlayer')
+const { withPlausibleProxy } = require('next-plausible')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,8 +20,8 @@ const nextConfig = {
 }
 
 const csp = `
-    default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    default-src 'self' vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' vercel.live;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
     font-src 'self' data:;
@@ -29,6 +29,7 @@ const csp = `
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';
+    frame-src 'self' vercel.live;
     block-all-mixed-content;
     upgrade-insecure-requests;
 `
@@ -60,5 +61,4 @@ const securityHeaders = [
   },
 ]
 
-export default nextConfig
-// export default withContentlayer(withPlausibleProxy()(nextConfig))
+module.exports = withContentlayer(withPlausibleProxy()(nextConfig))
